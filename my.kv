@@ -1,0 +1,84 @@
+
+<ItemLabel@Label>:
+    font_size: '25sp'
+    halign: 'left'
+    valign: 'middle'
+    text_size: self.size
+
+<Container>:
+    rows: 3
+    text_input: text_input
+    bitcoin: bitcoin
+    ethereum: ethereum
+    xrp: xrp
+    tether: tether
+    bitcoin_cash: bitcoin_cash
+
+    AnchorLayout:
+        size_hint: 1, 0.15
+        TextInput:
+            id: text_input
+            font_size: '40sp'
+            multiline: False
+            input_type: 'number'
+            input_field: 'float'
+
+
+    GridLayout:
+        cols: 2
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: [30, 0, 0, 0]
+
+            ItemLabel:
+                text: 'Bitcoin'
+
+            ItemLabel:
+                text: 'Ethereum'
+
+            ItemLabel:
+                text: 'XRP'
+
+            ItemLabel:
+                text: 'Tether'
+
+            ItemLabel:
+                text: 'Bitcoin Cash'
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: 0.5, 1
+            ItemLabel:
+                id: bitcoin
+                text: '0'
+
+            ItemLabel:
+                id: ethereum
+                text: '0'
+
+            ItemLabel:
+                id: xrp
+                text: '0'
+
+            ItemLabel:
+                id: tether
+                text: '0'
+
+            ItemLabel:
+                id: bitcoin_cash
+                text: '0'
+
+    BoxLayout:
+        size_hint: 0.9, 0.15
+        padding: [30, 0, 30, 20]
+        Button:
+            text: 'Total'
+            font_size: 40
+
+            on_release:
+                root.calculate()
+
+
+
+
